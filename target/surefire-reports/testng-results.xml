@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="16" passed="16">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="22729" started-at="2020-05-12T11:31:42 GMT+04:00" finished-at="2020-05-12T11:32:05 GMT+04:00">
+    <groups>
+    </groups>
+    <test name="testClass" duration-ms="22729" started-at="2020-05-12T11:31:42 GMT+04:00" finished-at="2020-05-12T11:32:05 GMT+04:00">
+      <class name="lab5.First_tests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:lab5.First_tests@69a3d1d]" name="setUp" is-config="true" duration-ms="17548" started-at="2020-05-12T11:31:42 GMT+04:00" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="Task3Abs(int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3Abs" duration-ms="13" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3Abs" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3Abs -->
+        <test-method status="PASS" signature="Task3Abs(int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3Abs" duration-ms="1" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3Abs" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2020]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3Abs -->
+        <test-method status="PASS" signature="Task3Abs(int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3Abs" duration-ms="1" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3Abs" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3Abs -->
+        <test-method status="PASS" signature="Task3Abs(int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3Abs" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3Abs" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3Abs -->
+        <test-method status="PASS" signature="Task3Abs(int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3Abs" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3Abs" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2133]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3Abs -->
+        <test-method status="PASS" signature="Task3AssExact(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3AssExact" duration-ms="1" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3AddExact" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3AssExact -->
+        <test-method status="PASS" signature="Task3AssExact(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3AssExact" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3AddExact" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3AssExact -->
+        <test-method status="PASS" signature="Task3AssExact(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3AssExact" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3AddExact" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[999999999]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[999999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3AssExact -->
+        <test-method status="PASS" signature="Task3AssExact(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3AssExact" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3AddExact" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[111]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[222]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3AssExact -->
+        <test-method status="PASS" signature="Task3AssExact(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3AssExact" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3AddExact" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3AssExact -->
+        <test-method status="PASS" signature="Task3FloorDiv(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3FloorDiv" duration-ms="1" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3FloorDiv" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3FloorDiv -->
+        <test-method status="PASS" signature="Task3FloorDiv(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3FloorDiv" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3FloorDiv" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3FloorDiv -->
+        <test-method status="PASS" signature="Task3FloorDiv(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3FloorDiv" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3FloorDiv" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3FloorDiv -->
+        <test-method status="PASS" signature="Task3FloorDiv(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3FloorDiv" duration-ms="0" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3FloorDiv" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3FloorDiv -->
+        <test-method status="PASS" signature="Task3FloorDiv(int, int)[pri:0, instance:lab5.First_tests@69a3d1d]" name="Task3FloorDiv" duration-ms="7" started-at="2020-05-12T11:32:00 GMT+04:00" data-provider="dataProv_Task3FloorDiv" finished-at="2020-05-12T11:32:00 GMT+04:00">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Task3FloorDiv -->
+        <test-method status="PASS" signature="first()[pri:0, instance:lab5.First_tests@69a3d1d]" name="first" duration-ms="4218" started-at="2020-05-12T11:32:00 GMT+04:00" finished-at="2020-05-12T11:32:04 GMT+04:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- first -->
+        <test-method status="PASS" signature="downUp()[pri:0, instance:lab5.First_tests@69a3d1d]" name="downUp" is-config="true" duration-ms="858" started-at="2020-05-12T11:32:04 GMT+04:00" finished-at="2020-05-12T11:32:05 GMT+04:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- downUp -->
+      </class> <!-- lab5.First_tests -->
+    </test> <!-- testClass -->
+  </suite> <!-- Suite1 -->
+</testng-results>
