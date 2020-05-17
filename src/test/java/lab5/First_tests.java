@@ -15,25 +15,24 @@ import org.testng.asserts.SoftAssert;
 
 public class First_tests {
 
-        private ChromeDriver webdriver;
-        @BeforeTest()
-        public void setUp() {
-            System.setProperty("webdriver.chrome.driver", "C:/trpo_idea/lab5_2/chromedriver.exe");
-            webdriver = new ChromeDriver();
-            ChromeOptions options = new ChromeOptions();
+    private ChromeDriver webdriver;
+    @BeforeTest()
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "C:/trpo_idea/lab5_2/chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
 
-            options.addArguments("--start-maximized");
+        options.addArguments("--start-maximized");
 
-            webdriver = new ChromeDriver(options);
+        webdriver = new ChromeDriver(options);
 
-            webdriver.get("http://automationpractice.com/");
+        webdriver.get("http://automationpractice.com/");
 
-        }
+    }
 
-        @AfterTest()
-        public void downUp(){
-            webdriver.quit();
-        }
+    @AfterTest()
+    public void downUp(){
+        webdriver.quit();
+    }
 
     private By formContainer = By.id("create-account_form");
     private By emailAddressInput = By.id("email_create");
@@ -42,24 +41,24 @@ public class First_tests {
 
     private static final int BASE_TIMEOUT = 3;
 
-        public void waitForElementDisplayed( By by ) {
-            WebDriverWait wait = new WebDriverWait( webdriver, BASE_TIMEOUT);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        }
+    public void waitForElementDisplayed( By by ) {
+        WebDriverWait wait = new WebDriverWait( webdriver, BASE_TIMEOUT);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
 
-        public void fillForm() {
-            this.waitForElementDisplayed( formContainer );
-            webdriver.findElement( emailAddressInput ).sendKeys( "123" );
-        }
+    public void fillForm() {
+        this.waitForElementDisplayed( formContainer );
+        webdriver.findElement( emailAddressInput ).sendKeys( "123" );
+    }
 
-        public void clickCreateAccountButton() {
-            webdriver.findElement( createAccountButton ).click();
-        }
+    public void clickCreateAccountButton() {
+        webdriver.findElement( createAccountButton ).click();
+    }
 
-        public String getErrorMessage() {
-            this.waitForElementDisplayed( errorMessage );
-            return webdriver.findElement( errorMessage ).getText();
-        }
+    public String getErrorMessage() {
+        this.waitForElementDisplayed( errorMessage );
+        return webdriver.findElement( errorMessage ).getText();
+    }
 
         @Test()
         public void first() {
@@ -69,61 +68,167 @@ public class First_tests {
             clickCreateAccountButton();
 
             String PageErrorMassage = getErrorMessage();
+            //Вводим в поле Login неверное значение и ожидаем ошибку, сравниваем текст ошибки с ожидаемым
             Assert.assertEquals(PageErrorMassage, "Invalid email address.", "error");
 
         }
 
-        @DataProvider(name = "Abs")
-        public Object[][] dataProvMethod1()
-        {
-            return new Object[][]{{1},{-1},{0},{-444444},{-0}};
-        }
+    @DataProvider(name = "FirstModuleData")
+    public Object[][] createData1()
+    {
+        Object[][] objects = new Object[3][1];
 
-        //задание 3.1
-        @Test(dataProvider = "Abs")
-        public void Abs(int a){
-            SoftAssert sa = new SoftAssert();
-            int Module = Math.abs(a);
-            sa.assertFalse(Module < 0, "Модуль не может быть меньше 0");
-            sa.assertAll();
+        for(int i = 0; i < 3; i++)
+        {
+            objects[i][0] = (int)(Math.random() * (Integer.MAX_VALUE - 1) + Math.random() * (Integer.MIN_VALUE + 1));
+        }
+        return objects;
+    }
 
-            System.out.println("\nЗадание №1: ");
-            System.out.println("abs(mod) = " + Module);
-        }
+    @DataProvider(name = "SecondModule1Data")
+    public Object[][] createData2()
+    {
+        Object[][] objects = new Object[3][2];
 
-        @DataProvider(name = "AddExact")
-        public Object[][] dataProvMethod2()
+        for(int i = 0; i < 3; i++)
         {
-            return new Object[][] {{-1,10},{0,0},{999999999,999999999},{-30,20},{111,222}};
+            objects[i][0] = (int)(Math.random() * (Integer.MAX_VALUE - 1));
+            objects[i][1] = (int)(Math.random() * (Integer.MIN_VALUE + 1));
         }
-        //задание 3.2
-        @Test(dataProvider = "AddExact")
-        public void AddExact(int a, int b)
-        {
-            try{
-                int Sum = Math.addExact(a,b);
-                System.out.println("\nЗадание №2: ");
-                System.out.println("addExact = " + Sum);
-            } catch (ArithmeticException e){
-                e.printStackTrace();
-            }
-        }
+        return objects;
+    }
 
-        @DataProvider(name = "FloorDiv")
-        public Object[][] dataProvMethod3()
+    @DataProvider(name = "SecondModule2Data")
+    public Object[][] createData3()
+    {
+        Object[][] objects = new Object[3][1];
+        for(int i = 0; i < 3; i++)
         {
-            return new Object[][] {{4,4},{4,3},{4,2},{4,1},{4,0}};
+            objects[i][0] = (int)(Math.random() * Integer.MAX_VALUE);
         }
-        //задание 3.3
-        @Test(dataProvider = "FloorDiv")
-        public void Task3FloorDiv(int a, int b)
+        return objects;
+    }
+
+    @DataProvider(name = "SecondModule3Data")
+    public Object[][] createData4()
+    {
+        Object[][] objects = new Object[3][1];
+        for(int i = 0; i < 3; i++)
         {
-            try{
-                int REMAIN = Math.floorDiv(a,b);
-                System.out.println("\nЗадание №3: ");
-                System.out.println("addExact = " + REMAIN);
-            } catch (ArithmeticException e){
-                e.printStackTrace();
-            }
+            objects[i][0] = (int)(Math.random() * Integer.MIN_VALUE);
         }
+        return objects;
+    }
+
+    @DataProvider(name = "ThirdModule1Data")
+    public Object[][] createData5()
+    {
+        Object[][] objects = new Object[3][2];
+
+        for(int i = 0; i < 3; i++)
+        {
+            objects[i][0] = (int)(Math.random() * Integer.MAX_VALUE - 1);
+            objects[i][1] = (int)(Math.random() * Integer.MAX_VALUE - 1);
+        }
+        return objects;
+    }
+
+
+    @Test(dataProvider = "FirstModuleData")
+    public void FirstModule(int a)
+    {
+        System.out.println("Тест 1. Проверка функции Math.abs(a) корректными значениями");
+
+        int b = Math.abs(a);
+        System.out.println("a = " + a);
+        System.out.println("Модуль a = " + b);
+        if (a < 0) Assert.assertEquals(b,a * -1);
+        else Assert.assertEquals(b, a);
+        System.out.println();
+    }
+
+    @Test(dataProvider = "SecondModule1Data")
+    public void SecondModule1(int x, int y)
+    {
+        System.out.println("Тест 2. Проверка функции Math.addExact корректными значениями");
+
+        System.out.println("Первое число = " + x + "; Второе число = " + y);
+        int sum = Math.addExact(x,y);
+        Assert.assertEquals(sum,x + y);
+        System.out.println("Значение с помощью addExact = " + sum);
+        System.out.println("Проверочное значение = " + (x + y));
+        System.out.println();
+    }
+
+    @Test(dataProvider = "SecondModule2Data")
+    public void SecondModule2(int y)
+    {
+        System.out.println("Тест 3. Проверка функции Math.addExact переполнением с положительными числами");
+
+        int x = Integer.MAX_VALUE;
+        System.out.println("Первое число = " + x + "; Второе число = " + y);
+        try {
+            // При попытке выполнения должна возникать ошибка типа RuntimeException, содержащая информацию о переполнении
+            Math.addExact(x,y);
+        }
+        catch (RuntimeException e)
+        {
+            System.out.println("Ожидаемый текст исключения: java.lang.ArithmeticException: integer overflow");
+            System.out.println("Текст исключения: " + e);
+            Assert.assertEquals(e.toString(),"java.lang.ArithmeticException: integer overflow");
+        }
+        System.out.println();
+    }
+
+    @Test(dataProvider = "SecondModule3Data")
+    public void SecondModule3(int y)
+    {
+        System.out.println("Тест 4. Проверка функции Math.addExact переполнением с отрицательными числами");
+
+        int x = Integer.MIN_VALUE;
+        System.out.println("Первое число = " + x + "; Второе число = " + y);
+        try {
+            // При попытке выполнения должна возникать ошибка типа RuntimeException, содержащая информацию о переполнении
+            Math.addExact(x,y);
+        }
+        catch (RuntimeException e)
+        {
+            System.out.println("Ожидаемый текст исключения: java.lang.ArithmeticException: integer overflow");
+            System.out.println("Текст исключения: " + e);
+            Assert.assertEquals(e.toString(),"java.lang.ArithmeticException: integer overflow");
+        }
+        System.out.println();
+    }
+
+    @Test(dataProvider = "ThirdModule1Data")
+    public void ThirdModule1(int x, int y)
+    {
+        System.out.println("Тест 5. Проверка функции Math.floorDiv c корректными значениями");
+        double res = x / y;
+        double result = Math.floorDiv(x, y);
+        System.out.println("Первое число = " + x + "; Второе число = " + y);
+        System.out.println("Результат floorDiv: " + result);
+        System.out.println("Проверка: " + res);
+        Assert.assertEquals(result, res);
+        System.out.println();
+    }
+
+    @Test(dataProvider = "FirstModuleData")
+    public void ThirdModule2(int x)
+    {
+        System.out.println("Тест 5. Проверка функции Math.floorDiv c делением на ноль");
+
+        int y = 0;
+        try {
+            // При попытке выполнения должна возникать ошибка типа RuntimeException, содержащая информацию о делении на 0
+            Math.floorDiv(x,y);
+        }
+        catch (Throwable e)
+        {
+            System.out.println("Ожидаемый текст исключения: java.lang.ArithmeticException: / by zero");
+            System.out.println("Текст исключения: " + e);
+            Assert.assertEquals(e.toString(),"java.lang.ArithmeticException: / by zero");
+        }
+        System.out.println();
+    }
 }
