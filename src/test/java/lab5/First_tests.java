@@ -78,15 +78,14 @@ public class First_tests {
     {
         Object[][] objects = new Object[3][1];
 
-        for(int i = 0; i < 3; i++)
-        {
-            objects[i][0] = (int)(Math.random() * (Integer.MAX_VALUE - 1) + Math.random() * (Integer.MIN_VALUE + 1));
-        }
+        objects[0][0] = (int)(Math.random() * (Integer.MAX_VALUE - 1) + Math.random() * (Integer.MIN_VALUE + 1));
+        objects[1][0] = Integer.MAX_VALUE;
+        objects[2][0] = Integer.MIN_VALUE;
         return objects;
     }
 
     @DataProvider(name = "SecondModule1Data")
-    public Object[][] createData2()
+    public Object[][] createData4()
     {
         Object[][] objects = new Object[3][2];
 
@@ -99,7 +98,7 @@ public class First_tests {
     }
 
     @DataProvider(name = "SecondModule2Data")
-    public Object[][] createData3()
+    public Object[][] createData5()
     {
         Object[][] objects = new Object[3][1];
         for(int i = 0; i < 3; i++)
@@ -110,7 +109,7 @@ public class First_tests {
     }
 
     @DataProvider(name = "SecondModule3Data")
-    public Object[][] createData4()
+    public Object[][] createData6()
     {
         Object[][] objects = new Object[3][1];
         for(int i = 0; i < 3; i++)
@@ -121,7 +120,7 @@ public class First_tests {
     }
 
     @DataProvider(name = "ThirdModule1Data")
-    public Object[][] createData5()
+    public Object[][] createData7()
     {
         Object[][] objects = new Object[3][2];
 
@@ -137,15 +136,25 @@ public class First_tests {
     @Test(dataProvider = "FirstModuleData")
     public void FirstModule(int a)
     {
-        System.out.println("Тест 1. Проверка функции Math.abs(a) корректными значениями");
+        System.out.println("Тест 1. Проверка функции Math.abs(a)");
 
         int b = Math.abs(a);
-        System.out.println("a = " + a);
-        System.out.println("Модуль a = " + b);
-        if (a < 0) Assert.assertEquals(b,a * -1);
-        else Assert.assertEquals(b, a);
+        int n = -2147483648;
+        int f = a * -1;
+        try {
+            System.out.println("a = " + a);
+            System.out.println("Модуль a = " + b);
+            if (a < 0) Assert.assertEquals(b, f);
+            else Assert.assertEquals(b, a);
+            Assert.assertFalse(b == n, "Исключительная ситуация: Значение модуля вычислить невозможно!");
+        }catch(AssertionError e){
+            System.out.println("Ожидаемое исключение: java.lang.AssertionError: Исключительная ситуация: Значение модуля вычислить невозможно! expected [false] but found [true]");
+            System.out.println("Текст исключения: " + e);
+            Assert.assertEquals(e.toString(),"java.lang.AssertionError: Исключительная ситуация: Значение модуля вычислить невозможно! expected [false] but found [true]");
+    }
         System.out.println();
     }
+
 
     @Test(dataProvider = "SecondModule1Data")
     public void SecondModule1(int x, int y)
